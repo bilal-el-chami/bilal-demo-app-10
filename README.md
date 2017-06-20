@@ -48,14 +48,14 @@ $ mvn archetype:generate -DgroupId={project-packaging}
  The project structure should look like this. If you don't see the java folder, you can create it manually later.
 
 ```
-.
+.mvn-app
  |-- src
  |   `-- main
- |       `-- java
- |           |-- resources
- |           |-- webapp
- |           |   `-- WEB-INF
- |           |       `-- web.xml
+ |       |-- java
+ |       |-- resources
+ |       |-- webapp
+ |       |   |-- WEB-INF
+ |       |   |   `-- web.xml
  |           `-- index.jsp
   `-- pom.xml
 ```
