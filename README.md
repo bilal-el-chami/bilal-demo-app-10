@@ -40,9 +40,9 @@ Run this command to create the app and provide the project-packaging and project
 
 ```sh
 $ mvn archetype:generate -DgroupId={project-packaging}
-			-DartifactId={project-name} 
-			-DarchetypeArtifactId=maven-archetype-webapp 
-			-DinteractiveMode=false
+			 -DartifactId={project-name} 
+			 -DarchetypeArtifactId=maven-archetype-webapp 
+			 -DinteractiveMode=false
 ```
 
  The project structure should look like this. If you don't see the java folder, you can create it manually later.
@@ -59,7 +59,7 @@ $ mvn archetype:generate -DgroupId={project-packaging}
  |           `-- index.jsp
   `-- pom.xml
 ```
-  The Project Object Model *(POM)* is an XML file that contains information about the project and configuration details used by Maven to build the project. [Learn more about pom.xml](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)
+  The Project Object Model `pom.xml` is an XML file that contains information about the project and configuration details used by Maven to build the project. [Learn more about pom.xml](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)
 
 #### Add The Webapp Runner Plugin
 Edit the `pom.xml` in a text editor and add the following code in your plugins section.
@@ -99,7 +99,7 @@ Edit the `pom.xml` in a text editor and add the following code in your plugins s
 </project>
 ```
 
-PS: You may want to change the JUnit version for future tests. Just modify the `<version>4.12</version>` element.
+PS: You may want to change the JUnit version for future tests. Just modify the version element to `<version>4.12</version>`.
 
 ### Create the Heroku Procfile:
 
@@ -111,7 +111,7 @@ Add this command in the `Procfile` using a text editor:
 web: java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
 ```
 
-### Make the project folder a Git repository and link it GitHub:
+### Make the project folder a Git repository and link it to GitHub:
 
 To link the project to GitHub, we have to [create a new repository](https://help.github.com/articles/creating-a-new-repository/) online, then init the project folder as a Git repo:
 
@@ -143,10 +143,10 @@ PS: The application name should be unique on Heroku
 If the application was created successfully:
 
  - Open the Heroku dashboard and select the newly created app
- - In the “Deploy” tab you can connect your application to a GitHub repo by searching for it.
+ - In the “Deploy” tab you can connect your application to a GitHub repo by searching for it
  - Click the button “Enable Automatic Deploys”
 
-Finally, you can click on “Deploy Branch” button in the "Manual deploy" section and you’ll application will be published online.
+Finally, you can click on “Deploy Branch” button in the "Manual deploy" section and your application will be published online.
 
 #### Create a deployment Pipeline
 
