@@ -279,12 +279,12 @@ You'll see that the build in Codeship will not succeed, and the home page of you
 [//]: # (Links)
 
    [AngularJS]: <http://angularjs.org>
-   [Jasmine]: <https://jasmine.github.io/>
-   [Chart.js]: <http://www.chartjs.org//>
-   [Karma 1.0]: <https://karma-runner.github.io/1.0/index.html/>
-   [Heroku]: <https://www.heroku.com/>
-   [Codeship]: <https://codeship.com/>
-   [Maven]: <https://maven.apache.org/>
-   [JavaScript]: <https://developer.mozilla.org/fr/docs/Web/JavaScript/>
+   [Jasmine]: <https://jasmine.github.io>
+   [Chart.js]: <http://www.chartjs.org>
+   [Karma 1.0]: <https://karma-runner.github.io/1.0/index.html>
+   [Heroku]: <https://www.heroku.com>
+   [Codeship]: <https://codeship.com>
+   [Maven]: <https://maven.apache.org>
+   [JavaScript]: <https://developer.mozilla.org/fr/docs/Web/JavaScript>
    [Java 8]: <https://www.java.com/fr/download/faq/java8.xml>
-   [JUnit 4]: <http://junit.org/junit4/>
+   [JUnit 4]: <http://junit.org/junit4>
