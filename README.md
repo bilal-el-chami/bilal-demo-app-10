@@ -56,7 +56,7 @@ $ mvn archetype:generate -DgroupId={project-packaging}
  |       |-- webapp
  |       |   |-- WEB-INF
  |       |   |   `-- web.xml
- |           `-- index.jsp
+ |            `-- index.jsp
   `-- pom.xml
 ```
   The Project Object Model `pom.xml` is an XML file that contains information about the project and configuration details used by Maven to build the project. [Learn more about pom.xml](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)
