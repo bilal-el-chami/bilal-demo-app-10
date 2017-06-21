@@ -228,10 +228,13 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class MyTest {
+
+	// This Test will Pass
 	@Test
 	public void myFirstTest() {
 		assertEquals("evaluate", 3 + 3 , 6);
-	} 
+	}
+	
 }
 
 ```
@@ -253,15 +256,19 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class MyTest {
+
+	// This Test will Pass
 	@Test
 	public void myFirstTest() {
 		assertEquals("evaluate 3 + 3", 3 + 3 , 6);
-	} 
-	
+	}
+
+	// This Test will Fail
 	@Test
 	public void mySecondTest() {
 		assertEquals("evaluate 3 + 2", 3 + 2 , 6);
-	} 
+	}
+
 }
 ```
 
