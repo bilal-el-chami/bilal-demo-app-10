@@ -113,7 +113,8 @@ web: java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT targe
 
 ### Make the project folder a Git repository and link it to GitHub:
 
-To link the project to GitHub, we have to [create a new repository](https://help.github.com/articles/creating-a-new-repository/) online, then init the project folder as a Git repo:
+To link the project to GitHub, we have to [create a new repository](https://help.github.com/articles/creating-a-new-repository/) online, then init the project folder as a Git repo.
+Go ahead and launch a command line in your Maven project directory and run the following commands:
 
 ``` sh
 $ git init
@@ -143,8 +144,11 @@ PS: The application name should be unique on Heroku
 If the application was created successfully:
 
  - Open the Heroku dashboard and select the newly created app
- - In the “Deploy” tab you can connect your application to a GitHub repo by searching for it
- - Click the button “Enable Automatic Deploys”
+ - In the “Deploy” tab you can connect your application to a GitHub
+	 - Select "Connect to GitHub" in the "Deployment method" section
+	 - Follow the instructions then search for your repo by its name
+	 - When you see the repo, click on the connect button
+ - Click the “Enable Automatic Deploys” button in the "Automatic deploys" section
 
 Finally, you can click on “Deploy Branch” button in the "Manual deploy" section and your application will be published online.
 
@@ -169,7 +173,7 @@ Learn More about Heroku Pipeline [here](https://devcenter.heroku.com/articles/pi
 
 Here you can find a simple and quick video that explains how to create a Heroku pipeline and add the continuous delivery approach to your project.
 
-[Continuous Delivery with Heroku and GitHub](https://www.youtube.com/watch?v=_tiecDrW6yY)
+[Continuous Delivery with Heroku and GitHub](https://youtu.be/_tiecDrW6yY?t=179)
 
 ### Add Continuous Integration to your app
 
@@ -188,13 +192,14 @@ After creating an account on Codeship:
  - Select Codeship Basic
  - Select Java from the "Select your technology to prepopulate basic commands" dropdown list
  - In the "Configure Test Pipelines" section, un-comment the `mvn test` command and remove the others
+ - Now you can "Save and go to dashboard"
 
 #### Configure Codeship project with Heroku App
 
 ##### **Heroku:**
 
  - Go to Heroku pipeline dashboard
- - Select the top right button to see more option concerning the app
+ - For the staging app, click the top right button to see more options
  - Select the "Configure automatic deployment..." option
  - Check that "Wait for CI to pass before deploy" checkbox is selected
 
@@ -204,11 +209,17 @@ Follow the steps in [this link](https://documentation.codeship.com/basic/continu
 
 #### Testing Codeship CI
 
+Make sure you have the up to date version of your app from GitHub. Run the following command:
+
+``` sh
+$ git pull origin master
+```
+
 To test if Codeship is working properly, make sure you have changed the JUnit version in the `pom.xml` file.
 
 Now go ahead and create new Java Class in the following directory:
 
-`YourProject > src > test > [application-packages]`
+`YourProject > src > test > java > [application-packages]`
 
 Here is a JUnit Java Class Test:
 
@@ -244,12 +255,12 @@ import org.junit.Test;
 public class MyTest {
 	@Test
 	public void myFirstTest() {
-		assertEquals("evaluate", 3 + 3 , 6);
+		assertEquals("evaluate 3 + 3", 3 + 3 , 6);
 	} 
 	
 	@Test
 	public void mySecondTest() {
-		assertEquals("evaluate", 3 + 3 , 5);
+		assertEquals("evaluate 3 + 2", 3 + 2 , 6);
 	} 
 }
 ```
@@ -274,7 +285,9 @@ $ git commit -m "Failing the test on purpose"
 $ git push origin master
 ```
 
-You'll see that the build in Codeship will not succeed, and the home page of your application will still have the "Hello World" title instead of "Hello John"
+You'll see that the build in Codeship will not succeed, and the home page of your application will still have the "Hello World" title instead of "Hello John", which means that Heroku didn't deploy the new version because it contains failing tests. And if you check your email inbox, you have probably recieved an alert email from Codeship telling you that the build failed.
+
+Now you can re-modify the java class to make it pass the tests so you can see the modifications you've made to the `index.jsp` file.
 
 [//]: # (Links)
 
